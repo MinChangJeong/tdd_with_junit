@@ -6,8 +6,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AlgorithmsTest {
     private final Algorithms algorithms = new Algorithms();
 
+    @Before
+    public void setUp() {
+        ApplicationContext context = new GenericXmlApplicationContext("application-context.xml");
+    }
+
     @Test
-    @DisplayName("Checking for small numbers")
     void checkFactorialForSmallNumbers() {
         assertAll(
                 () -> assertEquals(1, algorithms.factorial(0)),
@@ -17,8 +21,6 @@ public class AlgorithmsTest {
                 () -> assertEquals(24, algorithms.factorial(4)),
                 () -> assertEquals(120, algorithms.factorial(5))
         );
-
-        // Show problem with using long for result
-        assertTrue(algorithms.factorial(50) < 0);
     }
 }
+
