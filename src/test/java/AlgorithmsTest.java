@@ -6,11 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AlgorithmsTest {
     private final Algorithms algorithms = new Algorithms();
 
-    @Before
-    public void setUp() {
-        ApplicationContext context = new GenericXmlApplicationContext("application-context.xml");
-    }
-
     @Test
     void checkFactorialForSmallNumbers() {
         assertAll(
